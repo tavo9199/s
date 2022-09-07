@@ -6,7 +6,7 @@
 using namespace std;
 
 
-class Figura
+class figure
 {
 public:
     int l;
@@ -15,26 +15,26 @@ public:
 
 };
 
-class Cuadrado : public Figura
+class Cuadrado : public figure
 {
 public:
     int llenoVacio;
-    void dibujarCuadrado(int, int, int, int);
+    void cudradito(int, int, int, int);
 
 };
 
-class Triangulo : public Figura
+class Triangulo : public figure
 {
 public:
 
-    void dibujarTriangulo(int, int, int);
+    void triangulito(int, int, int);
 };
 
-class Rectangulo : public Figura
+class Rectangulo : public figure
 {
 public:
     int ancho;
-    void dibujarRectangulo(int, int, int, int);
+    void rectangulito(int, int, int, int);
 };
 
 class Menu
@@ -46,9 +46,9 @@ public:
 
 
 Menu objetoMenu;
-Cuadrado objetoCuadrado;
-Triangulo objetoTriangulo;
-Rectangulo objetoRectangulo;
+Cuadrado Ocuadrado;
+Triangulo Otriangulito;
+Rectangulo Orectangulo;
 
 int main()
 {
@@ -67,29 +67,29 @@ void Menu::iniciarMenu()
 
     system("cls");
     
-    cout << "Que figura desea dibujar? " << endl << "1-Cuadrado" << endl << "2-Triangulo" << endl << "3-Rectangulo" << endl ;
+    cout << "Que figure desea dibujar? " << endl << "1-Cuadrado" << endl << "2-Triangulo" << endl << "3-Rectangulo" << endl ;
     cin >> entrada;
 
     if (entrada == 1)
     {
         system("cls");
         cout << "Ingrese el lado del cuadrado" << endl;
-        cin >> objetoCuadrado.l;
+        cin >> Ocuadrado.l;
 
         system("cls");
         cout << "1-Vacio" << endl << "2-Lleno" << endl;
-        cin >> objetoCuadrado.llenoVacio;
+        cin >> Ocuadrado.llenoVacio;
 
         system("cls");
         cout << "En que posicion X quiere que lo ponga?" << endl;
-        cin >> objetoCuadrado.X;
+        cin >> Ocuadrado.X;
 
         system("cls");
         cout << "En que corrdenada Y quiere que lo ponga?" << endl;
-        cin >> objetoCuadrado.Y;
+        cin >> Ocuadrado.Y;
 
 
-        objetoCuadrado.dibujarCuadrado(objetoCuadrado.l, objetoCuadrado.llenoVacio, objetoCuadrado.X, objetoCuadrado.Y);
+        Ocuadrado.cudradito(Ocuadrado.l, Ocuadrado.llenoVacio, Ocuadrado.X, Ocuadrado.Y);
 
     }
 
@@ -97,40 +97,40 @@ void Menu::iniciarMenu()
     {
         system("cls");
         cout << "Ingrese largo del Triangulo" << endl;
-        cin >> objetoTriangulo.l;
+        cin >> Otriangulito.l;
 
         system("cls");
         cout << "En que posicion X quiere que lo ponga?" << endl;
-        cin >> objetoTriangulo.X;
+        cin >> Otriangulito.X;
 
         system("cls");
         cout << "En que corrdenada Y quiere que lo ponga?" << endl;
-        cin >> objetoTriangulo.Y;
+        cin >> Otriangulito.Y;
 
 
-        objetoTriangulo.dibujarTriangulo(objetoTriangulo.l, objetoTriangulo.X, objetoTriangulo.Y);
+        Otriangulito.triangulito(Otriangulito.l, Otriangulito.X, Otriangulito.Y);
 
     }
     if (entrada == 3)
     {
         system("cls");
         cout << "Ingrese el largo del Rectangulo" << endl;
-        cin >> objetoRectangulo.l;
+        cin >> Orectangulo.l;
 
         system("cls");
         cout << "Ingrese el ancho del Rectangulo" << endl;
-        cin >> objetoRectangulo.ancho;
+        cin >> Orectangulo.ancho;
 
         system("cls");
         cout << "En que corrdenada X quiere que lo ponga?" << endl;
-        cin >> objetoRectangulo.X;
+        cin >> Orectangulo.X;
 
         system("cls");
         cout << "En que corrdenada Y quiere que lo ponga?" << endl;
-        cin >> objetoRectangulo.Y;
+        cin >> Orectangulo.Y;
 
 
-        objetoRectangulo.dibujarRectangulo(objetoRectangulo.l, objetoRectangulo.ancho, objetoRectangulo.X, objetoRectangulo.Y);
+        Orectangulo.rectangulito(Orectangulo.l, Orectangulo.ancho, Orectangulo.X, Orectangulo.Y);
 
     }
 
@@ -142,7 +142,7 @@ void Menu::iniciarMenu()
     
 
 
-void Cuadrado::dibujarCuadrado(int l, int llenoVacio, int X, int Y)
+void Cuadrado::cudradito(int l, int llenoVacio, int X, int Y)
 {
     for (size_t i = 0; i < 10000000; i++)
     {
@@ -234,22 +234,22 @@ void Cuadrado::dibujarCuadrado(int l, int llenoVacio, int X, int Y)
             if (tecla == 'A' || tecla == 'a')
             {
                 X = X - 1;
-                objetoCuadrado.dibujarCuadrado(l, llenoVacio, X, Y);
+                Ocuadrado.cudradito(l, llenoVacio, X, Y);
             }
             if (tecla == 'S' || tecla == 's')
             {
                 Y = Y + 1;
-                objetoCuadrado.dibujarCuadrado(l, llenoVacio, X, Y);
+                Ocuadrado.cudradito(l, llenoVacio, X, Y);
             }
             if (tecla == 'D' || tecla == 'd')
             {
                 X = X + 1;
-                objetoCuadrado.dibujarCuadrado(l, llenoVacio, X, Y);
+                Ocuadrado.cudradito(l, llenoVacio, X, Y);
             }
             if (tecla == 'W' || tecla == 'w')
             {
                 Y = Y - 1;
-                objetoCuadrado.dibujarCuadrado(l, llenoVacio, X, Y);
+                Ocuadrado.cudradito(l, llenoVacio, X, Y);
             }
 
             if (tecla == 'L' || tecla == 'l')
@@ -263,7 +263,7 @@ void Cuadrado::dibujarCuadrado(int l, int llenoVacio, int X, int Y)
 
 }
 
-void Triangulo::dibujarTriangulo(int l, int X, int Y)
+void Triangulo::triangulito(int l, int X, int Y)
 {
 
     int contador = 0;
@@ -332,22 +332,22 @@ void Triangulo::dibujarTriangulo(int l, int X, int Y)
             if (tecla == 'A' || tecla == 'a')
             {
                 X = X - 1;
-                objetoTriangulo.dibujarTriangulo(l, X, Y);
+                Otriangulito.triangulito(l, X, Y);
             }
             if (tecla == 'S' || tecla == 's')
             {
                 Y = Y + 1;
-                objetoTriangulo.dibujarTriangulo(l, X, Y);
+                Otriangulito.triangulito(l, X, Y);
             }
             if (tecla == 'D' || tecla == 'd')
             {
                 X = X + 1;
-                objetoTriangulo.dibujarTriangulo(l, X, Y);
+                Otriangulito.triangulito(l, X, Y);
             }
             if (tecla == 'W' || tecla == 'w')
             {
                 Y = Y - 1;
-                objetoTriangulo.dibujarTriangulo(l, X, Y);
+                Otriangulito.triangulito(l, X, Y);
             }
 
             if (tecla == 'L' || tecla == 'l')
@@ -361,7 +361,7 @@ void Triangulo::dibujarTriangulo(int l, int X, int Y)
 
 }
 
-void Rectangulo::dibujarRectangulo(int l, int ancho, int X, int Y)
+void Rectangulo::rectangulito(int l, int ancho, int X, int Y)
 {
     for (size_t i = 0; i < 10000000; i++)
     {
@@ -421,22 +421,22 @@ void Rectangulo::dibujarRectangulo(int l, int ancho, int X, int Y)
             if (tecla == 'A' || tecla == 'a')
             {
                 X = X - 1;
-                objetoRectangulo.dibujarRectangulo(l, ancho, X, Y);
+                Orectangulo.rectangulito(l, ancho, X, Y);
             }
             if (tecla == 'S' || tecla == 's')
             {
                 Y = Y + 1;
-                objetoRectangulo.dibujarRectangulo(l, ancho, X, Y);
+                Orectangulo.rectangulito(l, ancho, X, Y);
             }
             if (tecla == 'D' || tecla == 'd')
             {
                 X = X + 1;
-                objetoRectangulo.dibujarRectangulo(l, ancho, X, Y);
+                Orectangulo.rectangulito(l, ancho, X, Y);
             }
             if (tecla == 'W' || tecla == 'w')
             {
                 Y = Y - 1;
-                objetoRectangulo.dibujarRectangulo(l, ancho, X, Y);
+                Orectangulo.rectangulito(l, ancho, X, Y);
             }
 
             if (tecla == 'L' || tecla == 'l')
